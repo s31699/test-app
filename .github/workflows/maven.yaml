@@ -81,7 +81,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Set up JDK 16 and cache Maven
-        uses: actions/setup-java@v2
+        uses: actions/setup-java@v4
         with:
           java-version: '16'
           distribution: 'temurin'
@@ -100,7 +100,7 @@ jobs:
         run: mvn -B verify
 
       - name: Upload JAR file
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
           name: app
           path: target/*.jar
@@ -122,7 +122,7 @@ jobs:
           driver-opts: network=host
 
       - name: Download JAR file
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v4
         with:
           name: app
           path: target/
